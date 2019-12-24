@@ -12,9 +12,7 @@ jobs:
         ansible-version: [25, 26, 27, 28, 29]
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          path: .
+      - uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v1
