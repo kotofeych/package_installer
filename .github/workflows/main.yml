@@ -12,9 +12,9 @@ jobs:
         ansible-version: [25, 26, 27, 28, 29]
 
     steps:
-      # - uses: actions/checkout@v1
-      #   with:
-      #     path: molecule_demo
+      - uses: actions/checkout@v1
+        with:
+          path: molecule_demo
 
       - name: Set up Python
         uses: actions/setup-python@v1
