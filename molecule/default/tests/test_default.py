@@ -29,7 +29,7 @@ def test_update_system(host):
         else:
             raise AssertionError(
                 'Unknown release: {}.'.format(
-                    host.system_info.release   
+                    host.system_info.release
                 )
             )
     else:
