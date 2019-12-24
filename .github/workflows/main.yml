@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          path: molecule_demo
+          path: $GITHUB_WORKSPACE
 
       - name: Set up Python
         uses: actions/setup-python@v1

@@ -7,4 +7,4 @@
     system_packages:
       - traceroute
   roles:
-    - role: onegreyonewhite.package_installer
+    - role: package_installer
