@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          path: ./
+          path: .
 
       - name: Set up Python
         uses: actions/setup-python@v1
