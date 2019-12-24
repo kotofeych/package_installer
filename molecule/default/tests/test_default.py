@@ -18,20 +18,10 @@ def test_update_system(host):
             "apt", "update_cache=yes upgrade=dist"
             )["changed"]
     elif host.system_info.distribution.lower() == 'centos':
-        if host.system_info.release <= '7':
-            assert not host.ansible(
-                "yum", "update_cache=yes name='*' state=latest"
-            )["changed"]
-        elif host.system_info.release >= '8':
-            assert not host.ansible(
-                "dnf", "update_cache=yes name='*' state=latest"
-            )["changed"]
-        else:
-            raise AssertionError(
-                'Unknown release: {}.'.format(
-                    host.system_info.release
-                )
-            )
+        module_name = 'dnf' if host.system_info.release >= '8' else 'yum'
+        assert not host.ansible(
+                module_name, "name='*' state=latest"
+        )["changed"]
     else:
         raise AssertionError(
             'Unknown distribution: {}.'.format(
