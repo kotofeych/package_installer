@@ -9,5 +9,6 @@
 - name: Install packages (OS family - RedHat)
   dnf:
     name: "{{ system_packages }}"
+    state: present
   become: yes
   when: check_system_packages
